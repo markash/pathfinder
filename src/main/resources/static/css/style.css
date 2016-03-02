@@ -1,0 +1,35 @@
+.default-color {
+    background-color: #3F729B !important;
+}
+
+.navbar-brand {
+    float: left;
+    padding: 0px 5px;
+    font-size: 18px;
+    line-height: 20px;
+    height: 50px;
+}
+
+.navbar .navbar-brand {
+    position: relative;
+    height: 60px;
+    line-height: 30px;
+    color: #fff;
+}
+
+.navbar-brand>span {
+    float: right;
+    margin-top: 13px;
+    margin-left: 8px;
+}
+
+.navbar .navbar-nav > li > a {
+    color: #fff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.navbar .navbar-nav > .active > a, .navbar .navbar-nav > .active > a:hover, .navbar .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.15);
+}
