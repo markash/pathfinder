@@ -1,3 +1,6 @@
+.container {
+    width: auto;    
+}
 .default-color {
     background-color: #3F729B !important;
 }
@@ -32,4 +35,85 @@
 .navbar .navbar-nav > .active > a, .navbar .navbar-nav > .active > a:hover, .navbar .navbar-nav > .active > a:focus {
     color: #fff;
     background-color: rgba(255, 255, 255, 0.15);
+}
+
+.dropdown-menu li > a, .dropdown-menu li > span {
+    font-size: 1rem;
+    color: #3F729B;
+    display: block;
+    padding: 0.2rem 1rem;
+        padding-top: 0.2rem;
+        padding-right: 1rem;
+        padding-bottom: 0.2rem;
+        padding-left: 1rem;
+}
+
+.profile {
+	height: 85px;
+	box-shadow: 1px 1px 20px #DCDCDC;
+}
+
+.profile-banner {
+	background-color: #3F729B;
+	height: 50px;
+}
+
+.profile-text {
+	margin-left: 100px;
+	margin-top: 0px;
+    padding-top: 10px;
+	color: #fff;
+	font-weight: 500px;
+}
+
+.profile-img {
+	border-radius: 100%;
+    width: 80px;
+    height: 80px;
+    top: -40px;
+    margin-top: -40px;
+    z-index: 9999;
+    margin-left: 20px;
+    border: solid 5px #fff;
+    position: relative;
+}
+
+.profile-name {
+	margin-left: 100px;
+}
+
+h4 {
+    font-size: 2rem;
+    line-height: 110%;
+    margin: 1.14rem 0 0 0;
+}
+
+hr {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    border: 0;
+    border-top: 2px solid #3F729B;
+}
+
+.pag-bottom {
+    position: fixed;
+    bottom: 20px;
+    left:0;
+    right:0;
+    height: 50px;
+}
+
+.page-footer {
+    position: fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    height: 50px;
+}
+
+footer.page-footer a {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 40px;
+    color: #fff;
 }

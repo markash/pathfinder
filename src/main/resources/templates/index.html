@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Material Design for Bootstrap</title>
+    <title>Three Sixty</title>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -18,7 +18,7 @@
 <body>
 
     <header>
-        <nav class="navbar default-color">
+        <nav class="navbar default-color  z-depth-1">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
@@ -62,59 +62,66 @@
     <main>
         <!--Main Container-->
         <div class="container">
-            <!--First Row-->
+            <div class="row profile">
+                <div class="col-md-12 profile-banner">
+                    <h4 class="profile-text">Assessment</h4>
+                    <h5 class="profile-name">Katie Bear <span style="float: right;">Overall: 3.0</span></h5>
+                    <img class="profile-img" alt="profile" src="../static/img/profile.jpg" th:src="@{/img/profile.jpg}" />
+                </div> 
+            </div>
             <div class="row">
-                <!--First Column-->
-                <div class="col-md-6">
-                    <div class="col-md-6">
-                        <img src="http://mdbootstrap.com/MDB/live/Corporate/img/project2.png" class="img-responsive" />
+                <form class="col-md-12">
+                    <div class="row">
+                    	<div class="col-md-5">
+                    		<h5><strong>Technology</strong></h5>
+                    		<p><strong>Outline:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    		<p><strong>Key Performance Area:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet laoreet tortor, eu bibendum dui. Cras congue massa eu tellus sagittis, eu tincidunt lacus pulvinar. Nulla nec odio sed nunc euismod rutrum eget vel velit. Donec cursus tincidunt libero </p>
+                    		<ul class="pagination pag-circle pag-bottom">
+						        <li><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+						        <li><a href="#">1</a></li>
+						        <li class="active"><a href="#">2</a></li>
+						        <li><a href="#">3</a></li>
+						        <li><a href="#">4</a></li>
+						        <li><a href="#">5</a></li>
+						        <li><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+						    </ul>
+                    	</div>
+                    	<div class="col-md-5">
+	                        <div class="input-field">
+	                            <textarea id="employeeAssessmentField"  class="materialize-textarea" rows="20"></textarea>
+	                            <label for="employeeAssessmentField">Employee assessment <i class="fa fa-pencil-square-o"></i></label>                     
+	                        </div>
+		                    <div class="input-field">
+	                            <textarea id="managerAssessmentField"  class="materialize-textarea" rows="30"></textarea>
+	                            <label for="managerAssessmentField">Manager assessment <i class="fa fa-pencil-square-o"></i></label>                     
+	                        </div>
+                        </div>
+                        <div class="col-md-2">
+                        	<div class="input-field">
+                            	<input id="ratingField" type="number"></input>
+                            	<label for="ratingField">Rating <i class="fa fa-pencil-square-o"></i></label>
+                            </div>                     
+                        </div>
                     </div>
-                </div>
-                <!--/.First Column-->
-                <!--Second Column-->
-                <div class="col-md-6">
-                </div>
-                <!--/.Second Column-->
-
+                </form>
             </div>
-            <!--/.First Row-->
-
-            <!--Second Row-->
-            <div class="row">
-
-                <!--First Column-->
-                <div class="col-md-4">
-
-                </div>
-                <!--/.First Column-->
-
-                <!--Second Column-->
-                <div class="col-md-4">
-
-                </div>
-                <!--/.Second Column-->
-
-                <!--Third Column-->
-                <div class="col-md-4">
-
-                </div>
-                <!--/.Third Column-->
-
-            </div>
-            <!--/.Second Row-->
-
         </div>
         <!--/.Main Container-->
 
     </main>
 
-    <footer>
+    <footer class="page-footer default-color center-on-small-only">
+        <div class="footer-copyright text-center rgba-black-light">
+            <div class="container-fluid">
+                © 2015 Copyright: <a href="http://www.yellowfire.co.za">Yellowfire.co.za</a>
+            </div>
+        </div>
     </footer>
 
 
-    <script th:src="@{/js/jquery.min.js}"     src="../static/js/jquery.min.js"/>
-    <script th:src="@{/js/bootstrap.min.js}" src="../static/js/bootstrap.min.js"/>
-    <script th:src="@{/js/mdb.js}"       src="../static/js/mdb.js"/>
+    <script th:src="@{/js/jquery.min.js}"     src="../static/js/jquery.min.js"></script> 
+    <script th:src="@{/js/bootstrap.min.js}"  src="../static/js/bootstrap.min.js"></script>
+    <script th:src="@{/js/mdb.js}"            src="../static/js/mdb.js"></script>
 </body>
 
 </html>
