@@ -64,8 +64,8 @@
         <div class="container">
             <div class="row profile">
                 <div class="col-md-12 profile-banner">
-                    <h4 class="profile-text">Assessment : Katie Bear <span style="float: right;">Overall: 3.0</span></h4>
-                    <h5 class="profile-name"><strong>Technology:</strong> <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span><span style="float: right;">Score: 4.0</span></h5>
+                    <h4 class="profile-text">Assessment : <span th:text="${result.employee.fullName}">Katie Bear</span> <span style="float: right;">Overall: <span th:text="${result.score}">3.0</span></span></h4>
+                    <h5 class="profile-name"><strong th:text="${result.current.performanceArea.name}">Technology:</strong> <span th:text="${result.current.performanceArea.description}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span><span style="float: right;">Score: <span th:text="${result.current.score}">4.0</span></span></h5>
                     <img class="profile-img" alt="profile" src="../static/img/profile.jpg" th:src="@{/img/profile.jpg}" />
                 </div> 
             </div>
@@ -73,7 +73,7 @@
                 <form class="col-md-12">
                     <div class="row">
                     	<div class="col-md-5">
-                    		<p><strong>Measurement:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet laoreet tortor, eu bibendum dui. Cras congue massa eu tellus sagittis, eu tincidunt lacus pulvinar. Nulla nec odio sed nunc euismod rutrum eget vel velit. Donec cursus tincidunt libero </p>
+                    		<p><strong>Measurement:</strong> <span th:text="${result.current.measurement}">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet laoreet tortor, eu bibendum dui. Cras congue massa eu tellus sagittis, eu tincidunt lacus pulvinar. Nulla nec odio sed nunc euismod rutrum eget vel velit. Donec cursus tincidunt libero</span></p>
                     	</div>
                     	<div class="col-md-5">
 	                        <div class="input-field">
@@ -87,11 +87,11 @@
                         </div>
                         <div class="col-md-2">
                         	<div class="input-field">
-                            	<input id="weightingField" type="number"></input>
-                            	<label for="weightingField">Weighting <i class="fa fa-balance-scale-"></i></label>
+                            	<input id="weightField" type="number" th:value="${result.current.weight}" disabled="disabled"></input>
+                            	<label for="weightField">Weight <i class="fa fa-balance-scale-"></i></label>
                             </div>
                             <div class="input-field">
-                            	<input id="ratingField" type="number"></input>
+                            	<input id="ratingField" type="number" th:value="${result.current.rating}"></input>
                             	<label for="ratingField">Rating <i class="fa fa-pencil-square-o"></i></label>
                             </div>    
                             <ul class="pagination pag-circle pag-bottom">

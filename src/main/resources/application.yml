@@ -11,7 +11,7 @@ spring:
       database: pathfinder
       grid-fs-database: pathfinder-gridfs
   main:
-      sources: za.co.yellowfire.pathfinder.PathfinderApplication
+      sources: za.co.yellowfire.threesixty.PathfinderApplication
 
 logging:
   level:

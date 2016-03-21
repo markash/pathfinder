@@ -1,9 +1,8 @@
-package za.co.yellowfire.pathfinder;
+package za.co.yellowfire.threesixty;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
-import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
@@ -27,15 +26,10 @@ public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 
     private static final String UTF8 = "UTF-8";
 
-    @Autowired
-    private ApplicationEventPublisher publisher;
+    //@Autowired
+    //private ApplicationEventPublisher publisher;
 
     private ApplicationContext applicationContext;
-
-    //@Autowired
-    //private DandelionDialect dandelionDialect;
-    //@Autowired
-    //private DataTablesDialect dataTablesDialect;
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) {
