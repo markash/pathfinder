@@ -39,6 +39,7 @@ public class AssessmentModel<ID> implements Serializable {
 		return scoreTotal;
 	}
 
+	@SuppressWarnings("unchecked")
 	public void addAll(AssessmentRatingModel<ID>...rating) {
 		for (AssessmentRatingModel<ID> assessmentRatingModel : rating) {
 			assessmentRatingModel.setAssessment(this);
