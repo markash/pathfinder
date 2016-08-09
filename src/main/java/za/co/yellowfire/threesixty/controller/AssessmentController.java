@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 import za.co.yellowfire.threesixty.model.AssessmentModel;
 import za.co.yellowfire.threesixty.model.AssessmentModelAndView;
 import za.co.yellowfire.threesixty.model.AssessmentRatingModel;
-import za.co.yellowfire.threesixty.model.PerformanceAreaModel;
+import za.co.yellowfire.threesixty.model.DisciplineModel;
 import za.co.yellowfire.threesixty.model.PersonModel;
 
 /**
@@ -25,14 +25,14 @@ public class AssessmentController {
 		String areaDescription = "Measurement of technology delivery";
 		String operationsDescription = "Measurement of operations management";
 		
-		String measurement = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet laoreet tortor, eu bibendum dui. Cras congue massa eu tellus sagittis, eu tincidunt lacus pulvinar. Nulla nec odio sed nunc euismod rutrum eget vel velit. Donec cursus tincidunt libero";
+		String measurement = "Successful delivery is measured against the project management plan for on time delivery and constraining the costs of the delivery to the agreed upon budgets.";
 		
 		AssessmentModel<String> assessment = new AssessmentModel<>();
 		assessment.setEmployee(new PersonModel<String>("1", "Katie", "Bear"));
 		assessment.setManager(new PersonModel<String>("2", "Ninja", "Cat"));
 		
-		PerformanceAreaModel<String> area1 = new PerformanceAreaModel<>("Technology", areaDescription);
-		PerformanceAreaModel<String> area2 = new PerformanceAreaModel<>("Operations", operationsDescription);
+		DisciplineModel<String> area1 = new DisciplineModel<>("1", "Technology", areaDescription);
+		DisciplineModel<String> area2 = new DisciplineModel<>("2", "Operations", operationsDescription);
 		
 		AssessmentRatingModel<String> rating1 = new AssessmentRatingModel<>("1", area1, measurement, 25, 4);
 		AssessmentRatingModel<String> rating2 = new AssessmentRatingModel<>("2", area1, measurement, 25, 4);

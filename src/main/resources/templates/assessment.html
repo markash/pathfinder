@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layouts/main}"
+    lang="en">
 
 <head>
     <meta charset="utf-8" />
@@ -17,55 +21,11 @@
 
 <body>
 
-    <header>
-        <nav class="navbar default-color  z-depth-1">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand waves-effect waves-light" href="#">
-                          <i id="icon" class="fa fa-rocket" style="text-shadow: rgb(44, 80, 109) 0px 0px 0px, rgb(46, 83, 112) 1px 1px 0px, rgb(47, 86, 116) 2px 2px 0px, rgb(49, 88, 120) 3px 3px 0px, rgb(50, 91, 124) 4px 4px 0px, rgb(52, 94, 128) 5px 5px 0px, rgb(54, 97, 132) 6px 6px 0px, rgb(55, 100, 136) 7px 7px 0px, rgb(57, 103, 140) 8px 8px 0px, rgb(58, 105, 143) 9px 9px 0px, rgb(60, 108, 147) 10px 10px 0px, rgb(61, 111, 151) 11px 11px 0px; font-size: 50px; color: rgb(255, 255, 255); height: 58px; width: 58px; line-height: 58px; border-radius: 10%; text-align: center; background-color: rgb(63, 114, 155);"></i><span>Three <strong>Sixty</strong></span>
-                    </a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#" class="waves-effect waves-light">Link <span class="sr-only">(current)</span></a></li>
-                        <li><a href="#" class="waves-effect waves-light">Link</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">One more separated link</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="navbar-form navbar-right" role="search">
-                        <div class="form-group waves-effect waves-light">
-                            <input type="text" class="form-control" placeholder="Search" />
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <!--Main Container-->
-        <div class="container">
+        <div class="container" layout:fragment="content">
             <div class="row profile">
                 <div class="col-md-12 profile-banner">
-                    <h4 class="profile-text">Assessment : <span th:text="${result.employee.fullName}">Katie Bear</span> <span style="float: right;">Overall: <span th:text="${result.score}">3.0</span></span></h4>
-                    <h5 class="profile-name"><strong th:text="${result.current.performanceArea.name}">Technology:</strong> <span th:text="${result.current.performanceArea.description}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span><span style="float: right;">Score: <span th:text="${result.current.score}">4.0</span></span></h5>
+                    <p class="profile-text"><span th:text="${result.employee.fullName}">Katie Bear</span> <span style="float: right; font-size: 1.25rem">Overall: <span th:text="${result.score}">3.0</span></span></p>
+                    <p class="profile-name"><strong th:text="${result.current.discipline.name}">Technology:</strong><span style="float: right;">Score: <span th:text="${result.current.score}">4.0</span></span></p>
                     <img class="profile-img" alt="profile" src="../static/img/profile.jpg" th:src="@{/img/profile.jpg}" />
                 </div> 
             </div>
@@ -73,6 +33,7 @@
                 <form class="col-md-12">
                     <div class="row">
                     	<div class="col-md-5">
+                    		<p><strong>Area:</strong> <span th:text="${result.current.discipline.description}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
                     		<p><strong>Measurement:</strong> <span th:text="${result.current.measurement}">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet laoreet tortor, eu bibendum dui. Cras congue massa eu tellus sagittis, eu tincidunt lacus pulvinar. Nulla nec odio sed nunc euismod rutrum eget vel velit. Donec cursus tincidunt libero</span></p>
                     	</div>
                     	<div class="col-md-5">
@@ -108,19 +69,7 @@
                 </form>
             </div>
         </div>
-        <!--/.Main Container-->
-
-    </main>
-
-    <footer class="page-footer default-color center-on-small-only">
-        <div class="footer-copyright text-center rgba-black-light">
-            <div class="container-fluid">
-                © 2015 Copyright: <a href="http://www.yellowfire.co.za">Yellowfire.co.za</a>
-            </div>
-        </div>
-    </footer>
-
-
+        
     <script th:src="@{/js/jquery.min.js}"     src="../static/js/jquery.min.js"></script> 
     <script th:src="@{/js/bootstrap.min.js}"  src="../static/js/bootstrap.min.js"></script>
     <script th:src="@{/js/mdb.js}"            src="../static/js/mdb.js"></script>

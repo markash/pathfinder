@@ -6,8 +6,6 @@ spring:
     mongodb:
       host: localhost
       port: 27017
-      username: pathfinder
-      password: pathfinder
       database: pathfinder
       grid-fs-database: pathfinder-gridfs
   main:

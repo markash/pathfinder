@@ -1,86 +1,105 @@
-.container {
-    width: auto;    
+
+.main {
+    width: auto;  
+    margin-top: 80px;  
 }
+
+.navbar {
+	background-color: rgb(63, 114, 155);
+}
+
 .default-color {
     background-color: #3F729B !important;
 }
 
-.navbar-brand {
-    float: left;
-    padding: 0px 5px;
-    font-size: 18px;
-    line-height: 20px;
-    height: 50px;
+.scrolling-navbar {
+        -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+        transition: background .5s ease-in-out, padding .5s ease-in-out;
 }
 
-.navbar .navbar-brand {
-    position: relative;
-    height: 60px;
-    line-height: 30px;
-    color: #fff;
+.top-nav-collapse {
+    background-color: #1C2331;
 }
 
-.navbar-brand>span {
-    float: right;
-    margin-top: 13px;
-    margin-left: 8px;
-}
 
-.navbar .navbar-nav > li > a {
-    color: #fff;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
+//.navbar-brand {
+//    float: left;
+//    padding: 0px 5px;
+//    font-size: 18px;
+//    line-height: 20px;
+//    height: 50px;
+//}
 
-.navbar .navbar-nav > .active > a, .navbar .navbar-nav > .active > a:hover, .navbar .navbar-nav > .active > a:focus {
-    color: #fff;
-    background-color: rgba(255, 255, 255, 0.15);
-}
+//.navbar .navbar-brand {
+//    position: relative;
+//    height: 60px;
+//    line-height: 30px;
+//    color: #fff;
+//}
 
-.dropdown-menu li > a, .dropdown-menu li > span {
-    font-size: 1rem;
-    color: #3F729B;
-    display: block;
-    padding: 0.2rem 1rem;
-        padding-top: 0.2rem;
-        padding-right: 1rem;
-        padding-bottom: 0.2rem;
-        padding-left: 1rem;
-}
+//.navbar-brand>span {
+//    float: right;
+//    margin-top: 13px;
+//    margin-left: 8px;
+//}
+
+//.navbar .navbar-nav > li > a {
+//    color: #fff;
+//    padding-top: 20px;
+//    padding-bottom: 20px;
+//}
+
+//.navbar .navbar-nav > .active > a, .navbar .navbar-nav > .active > a:hover, .navbar .navbar-nav > .active > a:focus {
+//    color: #fff;
+//    background-color: rgba(255, 255, 255, 0.15);
+//}
+
+//.dropdown-menu li > a, .dropdown-menu li > span {
+//    font-size: 1rem;
+//    color: #3F729B;
+//    display: block;
+//    padding: 0.2rem 1rem;
+//        padding-top: 0.2rem;
+//        padding-right: 1rem;
+//        padding-bottom: 0.2rem;
+//        padding-left: 1rem;
+//}
+
 
 .profile {
-	height: 85px;
-	box-shadow: 1px 1px 20px #DCDCDC;
-	margin-bottom: 15px;
+    box-shadow: 1px 1px 20px #DCDCDC;
+    margin-bottom: 15px;
 }
 
 .profile-banner {
-	background-color: #3F729B;
-	height: 50px;
+    background-color: #3F729B;
+    height: 50px;
 }
 
 .profile-text {
-	margin-left: 100px;
-	margin-top: 0px;
-    padding-top: 10px;
-	color: #fff;
-	font-weight: 500px;
+    margin-left: 80px;
+    margin-top: 0px;
+    padding-top: 15px;
+    color: #fff;
+    font-weight: 500px;
 }
 
 .profile-img {
-	border-radius: 100%;
+    border-radius: 100%;
     width: 80px;
     height: 80px;
-    top: -40px;
-    margin-top: -40px;
+    top: 10px;
+    margin-top: -50px;
     z-index: 9999;
-    margin-left: 20px;
+    margin-left: -5px;
     border: solid 5px #fff;
     position: relative;
 }
 
 .profile-name {
-	margin-left: 100px;
+    margin-left: 80px;
+    -webkit-margin-before: 0.5em;
 }
 
 h4 {
@@ -96,30 +115,58 @@ hr {
     border-top: 2px solid #3F729B;
 }
 
+
+@media (max-width: 200px) {
+    .profile-text {
+       font-size: 0.8rem;
+    }
+    .profile-name {
+       font-size: 0.5rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .profile-text {
+       font-size: 1.2rem;
+    }
+    .profile-name {
+       font-size: 1.0rem
+    }
+}
+
+@media (max-width: 570px) {
+    .profile-text {
+       font-size: 1.5rem;
+    }
+    .profile-text {
+       font-size: 1.2rem;
+    }
+}
+
 @media (min-width: 840px) {
-	.pag-bottom {
-	}
-	
-	.page-footer {
-	}
+    .pag-bottom {
+    }
+    
+    .page-footer {
+    }
 }
 
 @media (min-width: 1000px) {
-	.pag-bottom {
-	    position: fixed;
-	    bottom: 20px;
-	    left:0;
-	    right:0;
-	    height: 50px;
-	}
-	
-	.page-footer {
-	    position: fixed;
-	    bottom:0;
-	    left:0;
-	    right:0;
-	    height: 50px;
-	}
+    .pag-bottom {
+        position: fixed;
+        bottom: 20px;
+        left:0;
+        right:0;
+        height: 50px;
+    }
+    
+    .page-footer {
+        position: fixed;
+        bottom:0;
+        left:0;
+        right:0;
+        //height: 50px;
+    }
 }
 
 footer.page-footer a {

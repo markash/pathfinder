@@ -2,12 +2,14 @@ package za.co.yellowfire.threesixty;
 
 import java.util.ArrayList;
 
+import org.mongeez.MongeezRunner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 import org.springframework.boot.autoconfigure.mongo.MongoProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 import org.springframework.data.mongodb.config.EnableMongoAuditing;
 import org.springframework.data.mongodb.core.mapping.event.ValidatingMongoEventListener;
@@ -49,7 +51,7 @@ public class MongoConfig extends AbstractMongoConfiguration {
 		ServerAddress address = new ServerAddress(mongoProperties.getHost(), mongoProperties.getPort());
 		
 		MongoClient client;
-		if (!mongoProperties.getHost().equals("127.0.0.1")) {
+		if (!mongoProperties.getHost().equals("127.0.0.1") && !mongoProperties.getHost().equals("localhost")) {
 			MongoCredential credential = 
 					MongoCredential.createCredential(
 							mongoProperties.getUsername(), 
@@ -66,6 +68,25 @@ public class MongoConfig extends AbstractMongoConfiguration {
 		return client;
 	}
 
+	/*
+	 * <bean id="mongeez" class="org.mongeez.MongeezRunner">
+    <property name="mongo" ref="mongo"/>
+    <property name="executeEnabled" value="${migrate}"/>
+    <property name="dbName" value="${db.name}"/>
+    <property name="file" value="classpath:com/secondmarket/mongo/mongeez.xml"/>
+</bean>
+	 */
+	
+	@Bean
+	public MongeezRunner mongeez() throws Exception {
+		MongeezRunner mongeez = new MongeezRunner();
+		mongeez.setMongo(mongo());
+		mongeez.setExecuteEnabled(true);
+		mongeez.setDbName(mongoProperties.getDatabase());
+		mongeez.setFile(new ClassPathResource("mongeez/mongeez.xml"));
+		return mongeez;
+	}
+	
 	@Bean
 	public GridFsTemplate gridFsTemplate() throws Exception {
 		return new GridFsTemplate(mongoDbFactory(), mappingMongoConverter());

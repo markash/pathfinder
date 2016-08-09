@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layouts/main}"
+    lang="en">
+	<head>
+	    <meta charset="utf-8" />
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	    <title>Three Sixty</title>
+	
+	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+	    <link th:href="@{/css/bootstrap.min.css}" href="../static/css/bootstrap.min.css" rel="stylesheet" />
+	    <link th:href="@{/css/mdb.min.css}" href="../static/css/mdb.css" rel="stylesheet" />
+	    <link th:href="@{/css/style.css}" href="../static/css/style.css" rel="stylesheet" />
+	</head>
+	<body>
+	    <div class="container main" layout:fragment="content">
+	        <div class="row profile">
+	            <div class="col-md-12 profile-banner">
+	                <h4 class="profile-text">Kudos : Katie Bear <span style="float: right;">Wallet: $3.00</span></h4> 
+	                <img class="profile-img" alt="profile" src="../static/img/profile.jpg" th:src="@{/img/profile.jpg}" />
+	            </div> 
+	            <div class="row profile-name">
+		            <div class="col-md-12 profile-sub">
+		                <h5><span>Give credit where it is due.</span></h5>
+		            </div>
+	            </div>
+	        </div>
+            <div class="row">
+                <form class="col-md-6">
+	                <div class="row">
+	                	<div class="col-md-4">
+	                		<div class="btn-group" style="width: 100%;">
+                                <button class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Badge</button>
+							    <div class="dropdown-menu">
+							        <a class="dropdown-item" href="#">Action</a>
+							        <a class="dropdown-item" href="#">Another action</a>
+							        <a class="dropdown-item" href="#">Something else here</a>
+							        <div class="dropdown-divider"></div>
+							        <a class="dropdown-item" href="#">Separated link</a>
+							    </div>
+							</div>
+	                	</div>
+	                	<div class="col-md-4">
+	                        <div class="btn-group" style="width: 100%;">
+	                            <button class="btn btn-primary dropdown-toggle" style="width: 100%;"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Recipient</button>
+	                            <div class="dropdown-menu">
+	                                <a class="dropdown-item" href="#">Action</a>
+	                                <a class="dropdown-item" href="#">Another action</a>
+	                                <a class="dropdown-item" href="#">Something else here</a>
+	                                <div class="dropdown-divider"></div>
+	                                <a class="dropdown-item" href="#">Separated link</a>
+	                            </div>
+	                        </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="btn-group">
+                                <button class="btn btn-primary" type="button">Send</button>
+                                <button class="btn btn-warning" style="margin-left:5px;" type="button">Reset</button>
+                            </div>
+                        </div>
+	                </div>
+	                <div class="row" style="margin-top: 5px">
+                        <div class="col-md-12">
+                            <textarea id="messageField"  class="materialize-textarea" rows="30"></textarea>
+                            <label for="messageField">Message <i class="fa fa-pencil-square-o"></i></label>                     
+	                   </div>
+	                </div>
+	            </form>
+	            <div class="col-md-6">
+                   <ul class="list-group">
+                     <li class="list-group-item">
+                       <span class="label bg-primary label-pill pull-xs-right">14</span> <span>Thank you</span>
+                     </li>
+                     <li class="list-group-item">
+                       <span class="label bg-primary label-pill pull-xs-right">2</span> <span>Innovator</span>
+                     </li>
+                     <li class="list-group-item">
+                       <span class="label bg-primary label-pill pull-xs-right">1</span> <span>Challenger</span>
+                     </li>
+                   </ul>
+                 </div>
+	        </div>
+	    </div>
+	
+	    <script th:src="@{/js/jquery-2.2.3.min.js}"     src="../static/js/jquery-2.2.3.min.js"></script> 
+	    <script th:src="@{/js/tether.min.js}"           src="../static/js/tether.min.js"></script>
+	    <script th:src="@{/js/bootstrap.min.js}"        src="../static/js/bootstrap.min.js"></script>
+	    <script th:src="@{/js/mdb.js}"                  src="../static/js/mdb.js"></script>
+	</body>
+</html>

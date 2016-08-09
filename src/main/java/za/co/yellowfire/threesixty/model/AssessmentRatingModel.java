@@ -10,7 +10,7 @@ public class AssessmentRatingModel<ID> implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private ID id;
-	private PerformanceAreaModel<ID> performanceArea;
+	private DisciplineModel<ID> discipline;
 	private String measurement;
 	private String managerComment;
 	private String employeeComment;
@@ -25,13 +25,13 @@ public class AssessmentRatingModel<ID> implements Serializable {
 	
 	public AssessmentRatingModel(
 			final ID id, 
-			final PerformanceAreaModel<ID> performanceArea, 
+			final DisciplineModel<ID> discipline, 
 			final String measurement, 
 			final double weight, 
 			final double rating) {
 		super();
 		this.id = id;
-		this.performanceArea = performanceArea;
+		this.discipline = discipline;
 		this.measurement = measurement;
 		this.weight = weight;
 		this.rating = rating;
@@ -45,7 +45,7 @@ public class AssessmentRatingModel<ID> implements Serializable {
 	public double getEmployeeRating() { return employeeRating; }
 	public double getManagerRating() { return managerRating; }
 	public double getReviewRating() { return reviewRating; }	
-	public PerformanceAreaModel<ID> getPerformanceArea() { return performanceArea; }
+	public DisciplineModel<ID> getDiscipline() { return discipline; }
 	public AssessmentModel<ID> getAssessment() { return assessment; }
 	public double getWeightingTotal() { return getAssessment() != null ? getAssessment().getWeightingTotal() : 0.00; }
 	public double getScore() { return getRating() * (getWeight() / 100); }
@@ -59,7 +59,7 @@ public class AssessmentRatingModel<ID> implements Serializable {
 	public void setEmployeeRating(double employeeRating) { this.employeeRating = employeeRating; }
 	public void setManagerRating(double managerRating) { this.managerRating = managerRating; }
 	public void setReviewRating(double reviewRating) { this.reviewRating = reviewRating; }
-	public void setPerformanceArea(final PerformanceAreaModel<ID> performanceArea) { this.performanceArea = performanceArea; }
+	public void setPerformanceArea(final DisciplineModel<ID> discipline) { this.discipline = discipline; }
 	public void setAssessment(final AssessmentModel<ID> assessment) { this.assessment = assessment; }
 	public void setWeightingTotal(final double weightingTotal) { if (getAssessment() != null) { getAssessment().setWeightingTotal(weightingTotal); } }
 }
