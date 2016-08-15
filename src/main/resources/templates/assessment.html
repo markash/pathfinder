@@ -4,75 +4,81 @@
     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
     layout:decorate="~{layouts/main}"
     lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Three Sixty</title>
 
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Three Sixty</title>
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
-    <link th:href="@{/css/bootstrap.min.css}" href="../static/css/bootstrap.min.css" rel="stylesheet" />
-    <link th:href="@{/css/mdb.min.css}" href="../static/css/mdb.css" rel="stylesheet" />
-    <link th:href="@{/css/style.css}" href="../static/css/style.css" rel="stylesheet" />
-
-</head>
-
-<body>
-
-        <div class="container" layout:fragment="content">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+        <link th:href="@{/css/bootstrap.min.css}" href="../static/css/bootstrap.min.css" rel="stylesheet" />
+        <link th:href="@{/css/mdb.min.css}" href="../static/css/mdb.css" rel="stylesheet" />
+        <link th:href="@{/css/style.css}" href="../static/css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container main" layout:fragment="content">
             <div class="row profile">
                 <div class="col-md-12 profile-banner">
-                    <p class="profile-text"><span th:text="${result.employee.fullName}">Katie Bear</span> <span style="float: right; font-size: 1.25rem">Overall: <span th:text="${result.score}">3.0</span></span></p>
-                    <p class="profile-name"><strong th:text="${result.current.discipline.name}">Technology:</strong><span style="float: right;">Score: <span th:text="${result.current.score}">4.0</span></span></p>
+                    <h4 class="profile-text">
+                        <span th:text="${result.employee.fullName}">Katie Bear</span>
+                        <span style="float: right; font-size: 1.25rem">Overall: <span th:text="${result.score}">3.0</span></span>
+                    </h4> 
                     <img class="profile-img" alt="profile" src="../static/img/profile.jpg" th:src="@{/img/profile.jpg}" />
-                </div> 
+                </div>
+                <div class="row profile-name">
+                    <div class="col-md-12 profile-sub">
+                        <h5>
+                            <strong th:text="${result.current.discipline.name}">Technology:</strong>
+                            <span style="float: right;">Score: <span th:text="${result.current.score}">4.0</span></span>
+                        </h5>
+                    </div>
+                </div>
             </div>
             <div class="row">
                 <form class="col-md-12">
                     <div class="row">
-                    	<div class="col-md-5">
-                    		<p><strong>Area:</strong> <span th:text="${result.current.discipline.description}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
-                    		<p><strong>Measurement:</strong> <span th:text="${result.current.measurement}">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet laoreet tortor, eu bibendum dui. Cras congue massa eu tellus sagittis, eu tincidunt lacus pulvinar. Nulla nec odio sed nunc euismod rutrum eget vel velit. Donec cursus tincidunt libero</span></p>
-                    	</div>
-                    	<div class="col-md-5">
-	                        <div class="input-field">
-	                            <textarea id="employeeAssessmentField"  class="materialize-textarea" rows="20"></textarea>
-	                            <label for="employeeAssessmentField">Employee assessment <i class="fa fa-pencil-square-o"></i></label>                     
-	                        </div>
-		                    <div class="input-field">
-	                            <textarea id="managerAssessmentField"  class="materialize-textarea" rows="30"></textarea>
-	                            <label for="managerAssessmentField">Manager assessment <i class="fa fa-pencil-square-o"></i></label>                     
-	                        </div>
+                        <div class="col-md-5">
+                            <p><strong>Area:</strong> <span th:text="${result.current.discipline.description}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+                            <p><strong>Measurement:</strong> <span th:text="${result.current.measurement}">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet laoreet tortor, eu bibendum dui. Cras congue massa eu tellus sagittis, eu tincidunt lacus pulvinar. Nulla nec odio sed nunc euismod rutrum eget vel velit. Donec cursus tincidunt libero</span></p>
                         </div>
-                        <div class="col-md-2">
-                        	<div class="input-field">
-                            	<input id="weightField" type="number" th:value="${result.current.weight}" disabled="disabled"></input>
-                            	<label for="weightField">Weight <i class="fa fa-balance-scale-"></i></label>
+                        <div class="col-md-5">
+                            <div class="input-field">
+                                <textarea id="employeeAssessmentField" class="materialize-textarea" rows="20"></textarea>
+                                <label for="employeeAssessmentField">Employee assessment <i class="fa fa-pencil-square-o"></i></label>
                             </div>
                             <div class="input-field">
-                            	<input id="ratingField" type="number" th:value="${result.current.rating}"></input>
-                            	<label for="ratingField">Rating <i class="fa fa-pencil-square-o"></i></label>
-                            </div>    
+                                <textarea id="managerAssessmentField" class="materialize-textarea" rows="30"></textarea>
+                                <label for="managerAssessmentField">Manager assessment <i class="fa fa-pencil-square-o"></i></label>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-field">
+                                <input id="weightField" type="number" th:value="${result.current.weight}" disabled="disabled"></input>
+                                <label for="weightField">Weight <i class="fa fa-balance-scale-"></i></label>
+                            </div>
+                            <div class="input-field">
+                                <input id="ratingField" type="number" th:value="${result.current.rating}"></input>
+                                <label for="ratingField">Rating <i class="fa fa-pencil-square-o"></i></label>
+                            </div>
                             <ul class="pagination pag-circle pag-bottom">
-						        <li><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-						        <li><a href="#">1</a></li>
-						        <li class="active"><a href="#">2</a></li>
-						        <li><a href="#">3</a></li>
-						        <li><a href="#">4</a></li>
-						        <li><a href="#">5</a></li>
-						        <li><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-						    </ul>                 
+                                <li><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                                <li><a href="#">1</a></li>
+                                <li class="active"><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                            </ul>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
         
-    <script th:src="@{/js/jquery.min.js}"     src="../static/js/jquery.min.js"></script> 
-    <script th:src="@{/js/bootstrap.min.js}"  src="../static/js/bootstrap.min.js"></script>
-    <script th:src="@{/js/mdb.js}"            src="../static/js/mdb.js"></script>
-</body>
-
+        <script th:src="@{/js/jquery.min.js}"     src="../static/js/jquery.min.js"></script> 
+        <script th:src="@{/js/tether.min.js}"     src="../static/js/tether.min.js"></script>
+        <script th:src="@{/js/bootstrap.min.js}"  src="../static/js/bootstrap.min.js"></script>
+        <script th:src="@{/js/mdb.js}"            src="../static/js/mdb.js"></script>
+    </body>
 </html>

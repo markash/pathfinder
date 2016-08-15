@@ -8,7 +8,7 @@ db.role.insert({
 
 //changeset mpashworth:ChangeSet-2
 db.user.insert({
-	_id: "katie", _class: "za.co.yellowfire.threesixty.domain.user.User", password: "password", role: {_id: "Admin"}, firstName: "Katie", lastName: "Bear" 
+	_id: "katie@test.com", _class: "za.co.yellowfire.threesixty.domain.user.User", password: "password", role: {_id: "Admin"}, firstName: "Katie", lastName: "Bear" 
 });
 
 // changeset mpashworth:ChangeSet-3
@@ -17,3 +17,7 @@ db.period.insert({
     end   : ISODate("2016-03-31T00:00:00Z")
 });
 
+//changeset mpashworth:ChangeSet-4
+db.user.insert({
+	_id: "katie@test.com", _class: "za.co.yellowfire.threesixty.domain.user.User", password: "password", role: {_id: "Admin"}, firstName: "Katie", lastName: "Bear" 
+});

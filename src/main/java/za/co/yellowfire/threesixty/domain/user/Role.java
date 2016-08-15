@@ -25,7 +25,7 @@ public class Role implements Persistable<String> {
 	}
 	
 	@Override
-	public String getId() { return null; }
+	public String getId() { return this.id; }
 	@Override
 	public boolean isNew() { return false; }
 	

@@ -2,7 +2,7 @@
 <html 
     xmlns:th="http://www.thymeleaf.org" 
     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-    layout:decorate="~{layouts/main}"
+    layout:decorate="~{layouts/minimal}"
     lang="en">
 	<head>
 	    <meta charset="utf-8" />
@@ -19,21 +19,34 @@
 	<body>
 		<div class="container main" layout:fragment="content">
 			<div class="row">
-				<div class="col-md-3">
+				<div class="col-md-6 col-md-offset-3">
 					<div class="card">
+
 						<div class="card-block">
-							<h5 class="card-title">Registered users</h5>
-							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-							<a href="#" class="btn btn-primary">Button</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="card">
-						<div class="card-block">
-							<h5 class="card-title">Registered users</h5>
-							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-							<a href="#" class="btn btn-primary">Button</a>
+							<div class="form-header default-color">
+								<i class="fa fa-user"></i> Login
+							</div>
+							<div th:if="${param.error}">
+								Invalid user name and password.
+							</div>
+							<div th:if="${param.logout}">
+								You have been logged out.
+							</div>
+							<form th:action="@{/login}" method="post">
+								<div class="md-form">
+									<i class="fa fa-user prefix"></i>
+									<input type="email" class="form-control" id="username" name="username" aria-describedby="emailHelp"></input>
+									<label for="username">Email address</label>
+								</div>
+
+								<div class="md-form">
+									<i class="fa fa-lock prefix"></i>
+									<input type="password" class="form-control" id="password" name="password" aria-describedby="passwordHelp"></input>
+									<label for="password">Password</label>
+								</div>
+
+								<button type="submit" class="btn btn-primary">Login</button>
+							</form>
 						</div>
 					</div>
 				</div>

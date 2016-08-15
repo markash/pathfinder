@@ -11,24 +11,27 @@ import java.util.Set;
 public class AssessmentModel<ID> implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private PersonModel<ID> employee;
-	private PersonModel<ID> manager;
+	private PersonModel employee;
+	private PersonModel manager;
+	private PeriodModel<ID> period;
 	private AssessmentRatingModel<ID> current;
 	private Set<AssessmentRatingModel<ID>> ratings = new HashSet<>();
 	private double weightingTotal = 0.0;
 	
-	public PersonModel<ID> getEmployee() { return employee; }
-	public PersonModel<ID> getManager() { return manager; }
+	public PersonModel getEmployee() { return employee; }
+	public PersonModel getManager() { return manager; }
 	public Set<AssessmentRatingModel<ID>> getRatings() { return ratings; }
 	public double getWeightingTotal() { return weightingTotal; }
 	public AssessmentRatingModel<ID> getCurrent() { return current; }
+	public PeriodModel<ID> getPeriod() { return period; }
 	
-	public void setEmployee(final PersonModel<ID> employee) { this.employee = employee; }
-	public void setManager(final PersonModel<ID> manager) { this.manager = manager; }
-	public void setRatings(Set<AssessmentRatingModel<ID>> ratings) { this.ratings = ratings; }
-	public void setWeightingTotal(double weightingTotal) { this.weightingTotal = weightingTotal; }
-	public void setCurrent(AssessmentRatingModel<ID> current) { this.current = current; }
+	public void setEmployee(final PersonModel employee) { this.employee = employee; }
+	public void setManager(final PersonModel manager) { this.manager = manager; }
+	public void setRatings(final Set<AssessmentRatingModel<ID>> ratings) { this.ratings = ratings; }
+	public void setWeightingTotal(final double weightingTotal) { this.weightingTotal = weightingTotal; }
+	public void setCurrent(final AssessmentRatingModel<ID> current) { this.current = current; }
 	public void setScore(final double score) {}
+	public void setPeriod(final PeriodModel<ID> period) { this.period = period; }
 	
 	public double getScore() {
 		double scoreTotal = 0.00;

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layouts/main}"
+    lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Three Sixty</title>
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+        <link th:href="@{/css/bootstrap.min.css}" href="../static/css/bootstrap.min.css" rel="stylesheet" />
+        <link th:href="@{/css/mdb.min.css}" href="../static/css/mdb.css" rel="stylesheet" />
+        <link th:href="@{/css/style.css}" href="../static/css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container main" layout:fragment="content">
+            <div class="table-responsive">
+	            <table class="table table-hover table-condensed">
+	                <thead>
+	                   <tr>
+	                       <th>User name</th>
+	                       <th>Name</th>
+	                       <th>Role</th>
+	                       <th>Last Login</th>
+	                       <th>Actions</th> 
+	                   </tr>
+	                </thead>
+	                <tbody>
+	                   <tr th:each="result : ${results}">
+	                       <td>
+	                           <a href="#" th:href="@{'/user/' + ${result.id} + '/'}" th:text="${result.id}">katieb</a>
+	                       </td> 
+	                       <td th:text="${result.fullName}">Katie Bear</td> 
+	                       <td th:text="${result.rolesAsCsv}">Administrator</td>
+	                       <td th:text="${result.lastLogin}">2016-06-03</td>
+	                       <td>None</td>
+	                   </tr> 
+	               </tbody>
+	            </table>
+            </div>
+        </div>
+        
+        <script th:src="@{/js/jquery.min.js}"     src="../static/js/jquery.min.js"></script> 
+        <script th:src="@{/js/tether.min.js}"     src="../static/js/tether.min.js"></script>
+        <script th:src="@{/js/bootstrap.min.js}"  src="../static/js/bootstrap.min.js"></script>
+        <script th:src="@{/js/mdb.js}"            src="../static/js/mdb.js"></script>
+    </body>
+</html>

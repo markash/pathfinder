@@ -3,6 +3,7 @@ package za.co.yellowfire.threesixty;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -26,9 +27,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception {
+    protected void configure(final HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/**", "/css/**", "/img/*", "/js/*", "/js/**", "/static/css/**").permitAll()
+                .antMatchers("/css/**", "/img/*", "/js/*", "/js/**", "/font/**", "/static/css/**", "/static/font/**").permitAll()
                 .anyRequest().fullyAuthenticated().and()
                 .formLogin()
                 .loginPage("/login").failureUrl("/login?error").permitAll().and()
@@ -37,20 +38,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().csrfTokenRepository(csrfTokenRepository());
     }
 
-//    @Override
-//    public void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        ActiveDirectoryLdapAuthenticationProvider provider =
-//                new ActiveDirectoryLdapAuthenticationProvider(
-//                        "jse.co.za",
-//                        "ldap://VYDCADS01/");
-//
-//        provider.setUserDetailsContextMapper(
-//                new ExtendedLdapUserDetailsMapper(
-//                        lendingPartyUserRepository,
-//                        lendingPartyRepository,
-//                        userPermissionRepository));
-//
-//        /* Configure the Active Directory authentication virtual */
-//        auth.authenticationProvider(provider);
-//    }
+    @Override
+    public void configure(final AuthenticationManagerBuilder auth) throws Exception {
+    	auth.inMemoryAuthentication()
+            .withUser("guest@test.co.za").password("password").roles("USER");
+    }
 }

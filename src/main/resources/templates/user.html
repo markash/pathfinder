@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layouts/main}"
+    lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Three Sixty</title>
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+        <link th:href="@{/css/bootstrap.min.css}" href="../static/css/bootstrap.min.css" rel="stylesheet" />
+        <link th:href="@{/css/mdb.min.css}" href="../static/css/mdb.css" rel="stylesheet" />
+        <link th:href="@{/css/style.css}" href="../static/css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container main" layout:fragment="content">
+            <div class="row profile">
+                <div class="col-md-12 profile-banner">
+                    <h4 class="profile-text">
+                        <span th:text="${result.fullName}">Katie Bear</span>
+                        <span style="float: right; font-size: 1.25rem"></span>
+                    </h4> 
+                    <img class="profile-img" alt="profile" src="../static/img/profile.jpg" th:src="@{/img/profile.jpg}" />
+                </div>
+                <div class="row profile-name">
+                    <div class="col-md-12 profile-sub"><h5><strong>Profile</strong></h5></div>
+                </div>
+            </div>
+            <div class="row">
+	            <form class="col-md-12" th:action="@{/updateUser}" method="post">
+                    <div class="row">
+                        <div class="col-md-6">
+			                <div class="md-form">
+			                    <input type="email" class="form-control" id="username" name="username" aria-describedby="emailHelp" th:value="${result.id}"></input>
+			                    <label for="username">Email address</label>
+			                </div>
+			                <div class="md-form">
+			                    <input type="password" class="form-control" id="password" name="password" aria-describedby="passwordHelp" th:value="${result.id}"></input>
+			                    <label for="password">Password</label>
+			                </div>
+		                </div>
+		                <div class="col-md-6">
+                            <div class="md-form">
+	                            <input type="text" class="form-control" id="firstName" name="firstName" aria-describedby="firstNameHelp" th:value="${result.firstName}"></input>
+		                        <label for="firstName">First Name</label>
+		                    </div>
+	                        <div class="md-form">
+	                            <input type="text" class="form-control" id="lastName" name="lastName" aria-describedby="lastNameHelp" th:value="${result.lastName}"></input>
+	                            <label for="lastName">Last Name</label>
+	                        </div>
+		                </div>
+	                </div>
+	                <button type="submit" class="btn btn-primary">Update</button>
+	            </form>
+            </div>
+        </div>
+        
+        <script th:src="@{/js/jquery.min.js}"     src="../static/js/jquery.min.js"></script> 
+        <script th:src="@{/js/tether.min.js}"     src="../static/js/tether.min.js"></script>
+        <script th:src="@{/js/bootstrap.min.js}"  src="../static/js/bootstrap.min.js"></script>
+        <script th:src="@{/js/mdb.js}"            src="../static/js/mdb.js"></script>
+    </body>
+</html>

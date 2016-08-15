@@ -35,7 +35,7 @@
 	                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 	                    </li>
 	                    <li class="nav-item">
-	                        <a class="nav-link" href="#" th:href="@{/assessment/2}">Assessments</a>
+	                        <a class="nav-link" href="#" th:href="@{/assessments}">Assessments</a>
 	                    </li>
 	                    <li class="nav-item">
 	                        <a class="nav-link" href="#" th:href="@{/kudos}">Kudos</a>
@@ -44,6 +44,23 @@
 	                        <a class="nav-link" href="#" th:href="@{/}">Contact</a>
 	                    </li>
 	                </ul>
+					<ul class="nav navbar-nav nav-flex-icons">
+						<li class="nav-item ">
+							<a class="nav-link" href="#">1 <i class="fa fa-envelope"></i> </a>
+						</li>
+						<!--  
+						<li class="nav-item avatar active dropdown">
+							<a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<img src="http://mdbootstrap.com/wp-content/uploads/2015/10/avatar-2.jpg" class="img-fluid img-circle">
+							</a>
+							<div class="dropdown-menu dropdown-warning" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+								<a class="dropdown-item" href="#">Action</a>
+								<a class="dropdown-item" href="#">Another action</a>
+								<a class="dropdown-item" href="#">Something else here</a>
+							</div>
+						</li>
+						-->
+					</ul>
 	            </div>
 	        </div>
 	    </nav>
@@ -52,13 +69,7 @@
 	        <p>Content</p>
 	    </div>
 	
-	    <footer class="page-footer default-color center-on-small-only">
-	        <div class="footer-copyright text-center rgba-black-light">
-	            <div class="container-fluid">
-	                © 2015 Copyright: <a href="http://www.yellowfire.co.za">Yellowfire.co.za</a>
-	            </div>
-	        </div>
-	    </footer>
+	    <div th:include="layouts/layout-fragments :: footer"></div>
 	
 	    <script th:src="@{/js/jquery-2.2.3.min.js}"     src="../static/js/jquery-2.2.3.min.js"></script> 
 	    <script th:src="@{/js/tether.min.js}"           src="../static/js/tether.min.js"></script>

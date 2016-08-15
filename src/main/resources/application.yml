@@ -8,6 +8,8 @@ spring:
       port: 27017
       database: pathfinder
       grid-fs-database: pathfinder-gridfs
+      
+ 
   main:
       sources: za.co.yellowfire.threesixty.PathfinderApplication
 
